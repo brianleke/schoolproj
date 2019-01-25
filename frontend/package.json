@@ -1,0 +1,52 @@
+{
+  "name": "school-results-management",
+  "private": true,
+  "version": "0.0.0",
+  "description": "An application for school results management",
+  "license": "PVT",
+  "dependencies": {
+    "angular": "1.7.x",
+    "angular-aria": "^1.7.5",
+    "angular-chart.js": "^1.1.1",
+    "angular-material": "^1.1.12",
+    "angular-messages": "^1.7.5",
+    "angular-ui-bootstrap": "^2.5.6",
+    "bootstrap": "3.3.x",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.6.3",
+    "angular-animate": "^1.7.5",
+    "angular-cookies": "^1.7.5",
+    "angular-mocks": "1.7.x",
+    "angular-route": "^1.7.5",
+    "angular-ui-router": "^1.0.20",
+    "cpx": "^1.5.0",
+    "fullcalendar": "^3.9.0",
+    "http-server": "^0.11.1",
+    "jasmine-core": "^3.3.0",
+    "jsencrypt": "^3.0.0-rc.1",
+    "karma": "^3.1.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-jasmine": "^1.1.2",
+    "moment": "^2.23.0",
+    "ng-animate": "^0.3.4",
+    "protractor": "^5.4.1"
+  },
+  "scripts": {
+    "postinstall": "npm run copy-libs",
+    "update-deps": "npm update",
+    "postupdate-deps": "npm run copy-libs",
+    "copy-libs": "cpx \"node_modules/{{angular,angular-*,bootstrap/dist}/**/*,jsencrypt/bin/*}\" app/lib -C",
+    "prestart": "npm install",
+    "start": "http-server ./app -a localhost -p 8000 -c-1",
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "npm test -- --single-run",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor e2e-tests/protractor.conf.js"
+  }
+}
