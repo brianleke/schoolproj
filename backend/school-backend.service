@@ -1,0 +1,12 @@
+[Unit]
+Description=School Backend service
+
+[Service]
+ype=forking
+ExecStart=/usr/bin/java -jar /service/backend-0.0.1-SNAPSHOT.jar
+TimeoutSec=30
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
