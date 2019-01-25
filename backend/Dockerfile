@@ -1,4 +1,4 @@
-FROM maven:3.5-jdk-8
+FROM openjdk:8-jre
 RUN mkdir -p /service
 ADD target/backend-0.0.1-SNAPSHOT.jar /service
 ADD school-backend.service /etc/systemd/system
